@@ -1,0 +1,17 @@
+{% extends 'donor/donor_info.html' %}
+{% load bootstrap4 %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <h1>Item Details</h1>
+    <div class="container">
+    <form method="POST" class="post-form" action="{% url 'donor:item' %}">{% csrf_token %}
+    	{{ form|crispy }}
+    	<br/>
+		<div class="col-md-6">
+        	<button type="submit" class="save btn btn-default">Save</button>
+    	</div>
+    	    </form>
+</div>
+
+{% endblock %}
